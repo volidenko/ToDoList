@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToDoListItem } from "../to-do-list-item";
-import {from} from 'rxjs';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-to-do-list',
@@ -13,9 +13,9 @@ export class ToDoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.toDoListItem={
-      id:1,
-      name:"Презентация на завтра",
+    this.toDoListItem = {
+      id: 1,
+      name: "Создать презентацию на завтра",
       isCompleted: false
     }
   }
