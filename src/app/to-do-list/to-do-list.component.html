@@ -1,5 +1,31 @@
 <div class="toDo">
-    <h3>{{toDoListItem.id}}.{{toDoListItem.name}}</h3>
-    <div>Is Completed:{{toDoListItem.isCompleted}}</div>
-    <img src="../../assets/images/00009861.jpg"/>
+    <h3>{{toDoListItem.id}}. {{toDoListItem.name}}</h3>
+    <div>Is Completed: {{toDoListItem.isCompleted}}</div>
+    <!-- <img src="../../assets/images/00009861.jpg"/> -->
+    <img src="imageUrl"/>
+    <app-to-do-item-form [innerToDoItem]="selectedJob"></app-to-do-item-form>
+    <hr>
+    <!-- <div class=form-group>
+        <p>{{selectedJob.id}}</p>
+        <label>Название задачи:</label>
+        <input type="text" [(ngModel)]="selectedJob.name"/>
+        <label>Is Completed</label>
+        <input type="checkbox" [(ngModel)]="selectedJob.isCompleted" class="form-check-input"/>
+        <label class=""></label>
+    </div>
+    <hr> -->
+    <div *ngIf="jobs.length>0">
+        <ul class="list-group">Список дел:
+            <li *ngFor="let job of jobs" class="list-group-item list-group-item-action"(mouseover)="changeStyle(job)" [class.active]="job==selectedJob">
+                {{job.id}}.{{job.name}}
+            </li>
+        </ul>
+    </div>
+    <div [ngSwitch]="car">
+        <p *ngSwitchCase="'Audi'">Сегодня поедим на работу на Audi</p>
+        <p *ngSwitchCase="'BMW'">Сегодня поедим на работу на BMW</p>
+        <p *ngSwitchCase="'Ford'">Сегодня поедим на работу на Ford</p>
+        <p *ngSwitchCase="'Lada'">Сегодня поедим на работу на жиге</p> 
+        <p *ngSwitchDefault>Сегодня пойдем на работу пешком</p>    
+    </div>
 </div>

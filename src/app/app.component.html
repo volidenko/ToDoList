@@ -4,3 +4,9 @@
 <p>{{getTitle()}}</p>
 <hr/>
 <app-to-do-list></app-to-do-list>
+<hr/>
+<p>Font size: {{fontSize}} px</p>
+<app-style-example (fontChanged)="fontSizeSubscriberFcn($event)"></app-style-example>
+<app-work-with-service></app-work-with-service>
+
+<app-phone-form></app-phone-form>

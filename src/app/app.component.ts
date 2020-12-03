@@ -10,7 +10,11 @@ import { ToDoListItem } from '../app/to-do-list-item';
 })
 export class AppComponent {
   title = 'ToDolist Angular App';
-  getTitle=function():string {
-return this.title;
+  getTitle = function (): string {
+    return this.title;
+  }
+  fontSize: number;
+  fontSizeSubscriberFunc(val: number) {
+    this.fontSize = val;
   }
 }
