@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from 'src/phone';
-import { Phone } from "../phone";
+// import {  } from "../phone";
 
 
 @Component({
@@ -14,12 +14,14 @@ export class PhoneFormComponent implements OnInit {
   price:number;
   phones: Phone[]=[];
 
+  companies: string[]=["Apple", "Samsung", "Xiaomi", "Nokia"];
+
   constructor() { }
 
   ngOnInit(): void {
   }
   addPhone(){
-    this.phones
+    this.phones.push({model: this.model, manufacturer: this.manufacturer, price: this.price});
   }
 
 }

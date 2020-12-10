@@ -7,17 +7,16 @@
     <select name="manufacturer" [(ngModel)]="manufacturer" class="form-control">
         <option *ngFor="let company of companies" [value]="company">{{company}}</option>
     </select>
-    <input type="text" name="model" [(ngModel)]="model" class="form-control"/>
 </div>>
 <div class="form-group">
     <label for="price">Price:</label>
     <input type="text" name="price" [(ngModel)]="price" class="form-control"/>
 </div>>
 <div class="form-group">
-    <button class="btn btn-primary" (click)="addPhone()"></button>
+    <button class="btn btn-primary" (click)="addPhone()">Add Phone</button>
 </div>>
 <table class="table">
     <tr *ngFor="let phone of phones">
-        <td>{{phone.model}} {{phone.manufacturer}} {{price | currency}}</td>
+        <td>{{phone.model}} {{phone.manufacturer}}, {{price | currency: "UAH" : "code" : "1.2-2" : "ru"}}</td>
     </tr>
 </table>
